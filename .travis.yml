@@ -7,7 +7,7 @@ script:
   - docker images mmouru/node
 
 before_deploy:
-  - docker login -u mmouru -p Hyo880hyo880
+  - docker login -u $USER -p $PASSWORD
 
 deploy:
   provider: script
