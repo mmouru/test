@@ -5,3 +5,12 @@ services:
 script: 
   - docker build -t mmouru/node .
   - docker images mmouru/node
+
+before_deploy:
+  - docker login -u mmouru -p Hyo880hyo880
+
+deploy:
+  provider: script
+  script: docker push mmouru/node
+  on:
+    branch: master
